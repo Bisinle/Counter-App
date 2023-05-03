@@ -1,13 +1,22 @@
 import React from 'react'
 import Styles from './CounterStyles/Styles.css'
+import { createContext } from 'react';
+import { useState } from 'react';
+import ReactSwitch from 'react-switch'
 
-import { useState } from 'react'
+
+export const themeContext = createContext(null)
+
+
+
 
 export default function CounterRender() {
   const [display, setDisplay] = useState (0)
+  const [theme, setTheme] = useState('dark')
   
-
-
+  function toggle (){
+    setTheme((current)=> current ==='light' ? 'dark' : 'light')
+  }
   
   let increment =()=>{ setDisplay (display +1);  }
   let decrement =()=>{ setDisplay (display -1);  }
@@ -19,7 +28,12 @@ export default function CounterRender() {
 
 
   return (
-    <div className='CounterRender' >
+    <themeContext.Provider>
+    <div className='CounterRender' id={theme} >
+    <ReactSwitch 
+        onChange={toggle}
+        checked={theme==='dark'}
+      />
 
       <div className='CounterRender-content'>
           
@@ -38,5 +52,6 @@ export default function CounterRender() {
       </div>
       
     </div>
+    </themeContext.Provider>
   )
 }

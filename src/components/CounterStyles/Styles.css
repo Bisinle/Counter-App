@@ -13,6 +13,17 @@
 box-shadow: -5px -5px 10px 0px rgba(8, 170, 157, 0.5), 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
+#light .CounterRender {
+  background-color: #fff;
+  color: black;
+  box-shadow: -5px -5px 10px 0px rgba(0, 0, 0, 0.5), 5px 5px 10px 0px rgba(231, 0, 0, 0.3);
+}
+
+#dark .CounterRender{
+  background-color: #000;
+  color: white;
+}
+
 .CounterRender-content{
   height: 200px;
   width: 100%;
@@ -26,12 +37,31 @@ box-shadow: -5px -5px 10px 0px rgba(8, 170, 157, 0.5), 5px 5px 10px 0px rgba(0, 
   color: wheat;
   margin-bottom: 30px;
 
+}
 
 
+#light .CounterRender-h1{
+  background-color: #fff;
+  color: black;
 }
-.CounterRender-h2{
-  color: wheat;
+
+#dark .CounterRender-h1{
+  background-color: rgba(6, 87, 87, 0.231);
+  color: white;
 }
+
+
+
+#light .CounterRender-h2{
+  background-color: #fff;
+  color: black;
+}
+
+#dark .CounterRender-h2{
+  background-color: rgba(6, 87, 87, 0.231);
+  color: white;
+}
+
 .btn{
   margin-top: 50px;
   width: 100%; 
@@ -46,4 +76,30 @@ box-shadow: -5px -5px 10px 0px rgba(8, 170, 157, 0.5), 5px 5px 10px 0px rgba(0, 
   color: wheat;
   
 
+}
+
+
+
+#light .CounterRender-btn{
+  background-color: #fff;
+  color: black;
+  border: none;
+}
+
+#dark .CounterRender-btn{
+  background-color: #000;
+  color: wheat;
+  background: transparent;
+}
+
+
+
+#light {
+  background-color: #fff;
+  color: black;
+}
+
+#dark{
+  background-color: rgba(6, 87, 87, 0.231);
+  color: wheat;
 }
