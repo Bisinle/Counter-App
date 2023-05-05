@@ -11,16 +11,16 @@ export const themeContext = createContext(null)
 
 
 export default function CounterRender() {
-  const [display, setDisplay] = useState (0)
-  const [theme, setTheme] = useState('dark')
+  const [count, setCount] = useState (0)
+  const [theme, setTheme] = useState('light')
   
   function toggle (){
     setTheme((current)=> current ==='light' ? 'dark' : 'light')
-  }
-  
-  let increment =()=>{ setDisplay (display +1);  }
-  let decrement =()=>{ setDisplay (display -1);  }
-  let reset =()=>{ setDisplay (0);  }
+    }
+    
+  let increment =  () => setCount (prevCount => prevCount +1) 
+  let decrement = () => setCount(prevCount => prevCount-1)
+  let reset =()=>{ setCount (0);  }
 
  
   
@@ -31,7 +31,7 @@ export default function CounterRender() {
     <themeContext.Provider>
     <div className='CounterRender' id={theme} >
     <ReactSwitch 
-        onChange={toggle}
+             onChange={toggle}
         checked={theme==='dark'}
       />
 
@@ -40,7 +40,7 @@ export default function CounterRender() {
 
 
         <h2 className='CounterRender-h2'>Counter</h2>
-        <h1 className='CounterRender-h1'>{display}</h1>
+        <h1 className='CounterRender-h1'>{count}</h1>
         
         <div className='btn'>
           <button className='CounterRender-btn'onClick={increment}>+</button>

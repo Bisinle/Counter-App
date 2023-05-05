@@ -1,3 +1,8 @@
+*{
+  transition: all .3s ease-in-out;
+}
+
+
 .CounterRender{
   background-color: rgba(6, 87, 87, 0.231);
   height: 300px;
